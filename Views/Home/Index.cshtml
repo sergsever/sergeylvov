@@ -1,0 +1,24 @@
+﻿@model HomeModel
+@using sergeylvov.Views.Shared.Components
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<header>
+<div class="header">
+    <component type="typeof(Header)" render-mode="ServerPrerendered" param-Model=@Model.Header/>
+	</div>
+</header>
+
+    <component type="typeof(Articles)" render-mode="ServerPrerendered" />
+
+<footer>
+    <component type="typeof(Footer)" render-mode="ServerPrerendered"/>
+    
+</footer>

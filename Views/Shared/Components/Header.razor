@@ -1,0 +1,12 @@
+﻿@using sergeylvov.Models
+
+
+<div class="header">
+    <p><img src="@Model.Image"/> Name:@Model.Name; email:@Model.Email</p>
+</div>
+
+@code {
+    [Parameter]
+    public HeaderModel Model { get; set; }
+
+}
