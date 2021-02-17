@@ -72,8 +72,23 @@ body {
 
 .header
 {
+	position: relative;
 	float:left;
     width:100%;
 	background-color:grey;
 
+}
+
+.footer
+{
+	position:relative;
+	vertical-align:middle;
+	float:left;
+	width: 100%;
+	background-color:aqua;
+}
+
+.portret
+{
+	border-radius: 70px;
 }
