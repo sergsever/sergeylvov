@@ -19,5 +19,10 @@ namespace sergeylvov.Data
 
 		public DbSet<Article> articles { get; set; }
 
+		protected override void OnModelCreating(ModelBuilder builder)
+		{
+
+		}
+
 	}
 }
