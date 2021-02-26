@@ -1,5 +1,15 @@
-﻿<h3>Articles</h3>
+﻿@using sergeylvov.Data.Entities
+<h3>Articles</h3>
+<div class="list">
+ <h4>list of articles</h4>
+	@foreach(Article article in articles )
+	{
+ <div>@article.Title</div>
+	}
+</div>
 
 @code {
+	[Parameter]
+	public IEnumerable<Article> articles { get; set; }
 
 }

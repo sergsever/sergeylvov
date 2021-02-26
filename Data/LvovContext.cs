@@ -21,7 +21,8 @@ namespace sergeylvov.Data
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
-
+			builder.Entity<Article>().HasData(new Article() { Id = 1, Title = "ASP", Text = "<h1>asp.net</h1>", Created=DateTime.Now });
+			builder.Entity<Article>().HasData(new Article()	{Id=2, Title="databases", Text="<h1>Entity framework</h1>", Created=DateTime.Now });
 		}
 
 	}
