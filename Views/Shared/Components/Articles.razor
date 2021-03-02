@@ -1,15 +1,22 @@
-﻿@using sergeylvov.Data.Entities
+﻿
+@using sergeylvov.Data.Entities
+@using System.Diagnostics
+@using Microsoft.AspNetCore.Components.Web
 <h3>Articles</h3>
 <div class="list">
  <h4>list of articles</h4>
 	@foreach(Article article in articles )
 	{
- <div>@article.Title</div>
+ <a href="#" @onclick="@(e =>ShowArticle(article.Id) )" onclick-stop-propagation="true">@article.Title</a>
 	}
 </div>
 
 @code {
 	[Parameter]
 	public IEnumerable<Article> articles { get; set; }
+	private void ShowArticle(int id)
+	{
+           Debug.WriteLine($"show article - {id}");
+	}
 
 }

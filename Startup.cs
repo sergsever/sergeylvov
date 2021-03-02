@@ -25,6 +25,7 @@ namespace sergeylvov
 		{
 			services.AddSingleton(typeof(ArticlesDAO));
 			services.AddControllersWithViews();
+			services.AddServerSideBlazor();
 			
 		}
 
@@ -50,6 +51,7 @@ namespace sergeylvov
 				endpoints.MapControllerRoute(
 					name: "default",
 					pattern: "{controller=Home}/{action=Index}/{id?}");
+				endpoints.MapBlazorHub();
 			});
 		}
 	}
