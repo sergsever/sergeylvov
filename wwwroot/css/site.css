@@ -114,3 +114,16 @@ body {
 	vertical-align:middle;
 	margin: 0;
 }
+
+.list
+{
+	position:relative;
+	float:left;
+}
+
+.article_text
+{
+	position:relative;
+	float:left;
+	margin-left: 10px;
+}
