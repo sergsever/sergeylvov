@@ -1,0 +1,13 @@
+﻿@using sergeylvov.Models
+@using sergeylvov.Data.Entities
+@model HomeModel
+
+<div class="list">
+	@foreach(Article article in Model.articles)
+	{
+		<a href="/Home/Article/@article.Id">@article.Title</a><br>
+	}
+</div>
+<div class="article_text">
+<div>@Html.Raw(Model.CurrArticle.Text)</div>
+</div>

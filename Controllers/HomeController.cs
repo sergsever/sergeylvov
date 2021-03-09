@@ -24,9 +24,17 @@ namespace sergeylvov.Controllers
 		public IActionResult Index()
 		{
 			HomeModel model = new HomeModel();
-			model.Header = new HeaderModel() { Name = "Sergey Lvov", Email = "sergey.lvov70@gmail.com", Image = "img/serg.png" };
 			model.articles = Dao.GetAll();
+			model.CurrArticle = model.articles.FirstOrDefault();
 			return View(model);
+		}
+
+		public IActionResult Article(int id)
+		{
+			HomeModel model = new HomeModel();
+			model.articles = Dao.GetAll();
+			model.CurrArticle = Dao.Find(id);
+			return View("Index", model);
 		}
 
 		public IActionResult Privacy()

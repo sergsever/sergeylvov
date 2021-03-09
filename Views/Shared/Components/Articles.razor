@@ -1,8 +1,11 @@
 ﻿
+@using Microsoft.AspNetCore.Html
 @using sergeylvov.Data.Entities
 @using System.Diagnostics
 @using Microsoft.AspNetCore.Components.Web
 @using System.Web
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
 <h3>Articles</h3>
 <div class="list">
  <h4>list of articles</h4>
@@ -16,18 +19,25 @@
 	{
 		<h3>@currArticle.Title</h3>
 		<h5>@currArticle.Created</h5>
-		<p>@currArticle.Text</p>
+		<div>@articleText</div>
 	}
-</div>
+  </div>
 
 @code {
 	[Parameter]
 	public IEnumerable<Article> articles { get; set; }
 	private Article currArticle { get; set; }
+	private IHtmlContent articleText { get; set; }
 	private void ShowArticle(int id)
 	{
            Debug.WriteLine($"show article - {id}");
            currArticle = articles.Where(a => a.Id == id).FirstOrDefault();
+           HtmlContentBuilder builder = new HtmlContentBuilder();
+           builder.Append(currArticle.Text);
+           articleText = builder;
+
+           articleText = new HtmlString(currArticle.Text);
+		   
 
 	}
 
