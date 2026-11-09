@@ -1,0 +1,56 @@
+
+header {
+    background-color: #B999;
+    width: 100%;
+}
+
+.environments {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.env {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+
+}
+
+/*.env img {*/
+/*    height: 40px;*/
+/*    width: 50px;*/
+/*}*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.skill {
+    display: grid;
+    grid-auto-rows: 1fr 1fr 1fr 1fr ;
+    background-color: #ffffff;
+
+}
+
+.skill img {
+    height: 40px;
+    width: 50px;
+}
+
+.skill h3 {
+
+    margin-top: 5px;
+}
+
+.skill h4 {
+
+}
+.skill p {
+}
+
+footer {
+    background-color: #AA9999;
+    width: 100%;
+}
